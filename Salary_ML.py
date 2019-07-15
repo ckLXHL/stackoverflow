@@ -25,10 +25,11 @@ def clean_data(df):
     '''
     # Drop rows with missing salary values
     df = df.dropna(subset=['Salary'], axis=0)
-    y = df['Salary']
+    df['Salary'] = df['Salary'].str.replace(',', '')
+    y = pd.to_numeric(df['Salary'])
 
     #Drop respondent and expected salary columns
-    df = df.drop(['Respondent', 'ExpectedSalary', 'Salary'], axis=1)
+    df = df.drop(['Respondent', 'Salary'], axis=1)
 
     # Fill numeric columns with the mean
     num_vars = df.select_dtypes(include=['float', 'int']).columns
@@ -37,10 +38,7 @@ def clean_data(df):
 
     # Dummy the categorical variables
     cat_vars = df.select_dtypes(include=['object']).copy().columns
-    for var in  cat_vars:
-        # for each cat add dummy var, drop original column
-        df = pd.concat([df.drop(var, axis=1), pd.get_dummies(df[var], prefix=var, prefix_sep='_', drop_first=True)], axis=1)
-
+    df = pd.get_dummies(df, columns=cat_vars)
     X = df
     return X, y
 
@@ -106,7 +104,7 @@ def find_optimal_lm_mod(X, y, cutoffs, test_size = .30, random_state=42, plot=Tr
     return r2_scores_test, r2_scores_train, lm_model, X_train, X_test, y_train, y_test
 
 def main():
-    df = pd.read_csv('../Part1/stackoverflow/survey_results_public.csv')
+    df = pd.read_csv('survey_results_public.csv')
     X, y = clean_data(df)
     #cutoffs here pertains to the number of missing values allowed in the used columns.
     #Therefore, lower values for the cutoff provides more predictors in the model.
