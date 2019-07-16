@@ -24,7 +24,7 @@ For this project, I was interestested in using Stack Overflow data from 2018 to 
 
 ## File Descriptions <a name="files"></a>
 
-There are 2 notebooks available here to showcase work related to the above questions.  Each of the notebooks is exploratory in searching through the data pertaining to the questions.  Markdown cells were used to assist in walking through the thought process for individual steps.  
+There are 2 notebooks available here to showcase work related to the above questions.  Each of the notebooks is exploratory in searching through the data pertaining to the questions.  Markdown cells were used to assist in walking through the thought process for individual steps. 
 
 There is an additional `.py` file that runs the necessary code to obtain the final model used to predict salary.
 
