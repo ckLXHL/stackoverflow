@@ -19,7 +19,8 @@ For this project, I was interestested in using Stack Overflow data from 2018 to 
 
 1. What's the distribution of gender, age, salary, country and so on?
 2. What factors about an individual contributed to salary?
-3. Did hard-work connected with salary? Did satisfacation connected with salary
+3. Did hard-work connected with salary? Did satisfacation connected with salary?
+4. How to get high salary
 
 ## File Descriptions <a name="files"></a>
 
@@ -29,7 +30,7 @@ There is an additional `.py` file that runs the necessary code to obtain the fin
 
 ## Results<a name="results"></a>
 
-The main findings of the code can be found at the post available [here](https://medium.com/@josh_2774/how-do-you-become-a-developer-5ef1c1c68711).
+The main findings of the code can be found at the post available [here](https://medium.com/@cklxhl/how-to-get-high-salary-3694af037446).
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
